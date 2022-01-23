@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ExothDE/Nordseite-GMB.git"
+    "url": "git+https://github.com/ExothDE/Nordseite-GMBH.git"
   },
   "author": "Sayrix (github.com/ExothDE)",
   "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/ExothDE/Nordseite-GMB/issues"
+    "url": "https://github.com/ExothDE/Nordseite-GMBH/issues"
   },
-  "homepage": "https://github.com/ExothDE/Nordseite-GMB#readme"
+  "homepage": "https://github.com/ExothDE/Nordseite-GMBH#readme"
 }
