@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sayrix/ticket-bot.git"
+    "url": "git+https://github.com/ExothDE/Nordseite-GMB.git"
   },
-  "author": "Sayrix (github.com/Sayrix)",
+  "author": "Sayrix (github.com/ExothDE)",
   "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/Sayrix/ticket-bot/issues"
+    "url": "https://github.com/ExothDE/Nordseite-GMB/issues"
   },
-  "homepage": "https://github.com/Sayrix/ticket-bot#readme"
+  "homepage": "https://github.com/ExothDE/Nordseite-GMB#readme"
 }
