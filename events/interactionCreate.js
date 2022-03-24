@@ -36,37 +36,37 @@ module.exports = {
         });
 
         const embed = new client.discord.MessageEmbed()
-          .setColor('6d6ee8')
-          .setAuthor('Ticket', 'https://cdn.discordapp.com/attachments/826231574177644585/934365593140879380/unknown.png')
-          .setDescription('Wähle die Kategorie von dein Ticket aus')
-          .setFooter('Nordseite', 'https://cdn.discordapp.com/attachments/826231574177644585/934365593140879380/unknown.png')
+          .setColor('ff9600')
+          .setAuthor('Ticket', ' ')
+          .setDescription('Wähle ein Grund, warum du ein Ticket erstellt hast')
+          .setFooter('Ticket System', ' ')
           .setTimestamp();
 
         const row = new client.discord.MessageActionRow()
           .addComponents(
             new client.discord.MessageSelectMenu()
             .setCustomId('category')
-            .setPlaceholder('Wähle die Kategorie von dein Ticket aus')
+            .setPlaceholder('Wähle ein Grund, warum du ein Ticket erstellt hast')
             .addOptions([{
-                label: 'Transaction',
-                value: 'transaction',
-                emoji: '🔓',
+                label: 'Bewerben',
+                value: 'Bewerben',
+                emoji: { name: '📑' }
               },
               {
                 label: 'Support',
-                value: 'support',
-                emoji: '🚀',
+                value: 'Support',
+                emoji: { name: '❓' }
               },
               {
                 label: 'Beschwerde',
-                value: 'beschwerde',
-                emoji: '❗',
+                value: 'Beschwerde',
+                emoji: { name: '😡' }
               },
 
               {
-                label: 'Allgemeines',
-                value: 'allgemeines',
-                emoji: '❓',
+                label: 'Partnerschaft',
+                value: 'Partnerschaft',
+                emoji: { name: '🥇' }
               },
             ]),
           );
@@ -87,10 +87,10 @@ module.exports = {
             if (msg.deletable) {
               msg.delete().then(async () => {
                 const embed = new client.discord.MessageEmbed()
-                  .setColor('6d6ee8')
-                  .setAuthor('Ticket', 'https://cdn.discordapp.com/attachments/826231574177644585/934365593140879380/unknown.png')
-                  .setDescription(`<@!${interaction.user.id}> Hat ein **Ticket** erstellt mit dem **Grund:** ${i.values[0]}`)
-                  .setFooter('Nordseite', 'https://cdn.discordapp.com/attachments/826231574177644585/934365593140879380/unknown.png')
+                  .setColor('ff9600')
+                  .setAuthor('Ticket', ' ')
+                  .setDescription(`<@!${interaction.user.id}> Hat ein **Ticket** erstellt mit dem Grund・ ${i.values[0]}`)
+                  .setFooter('Ticket System', ' ')
                   .setTimestamp();
 
                 const row = new client.discord.MessageActionRow()
@@ -113,25 +113,25 @@ module.exports = {
                 });
               });
             };
-            if (i.values[0] == 'transaction') {
+            if (i.values[0] == 'Bewerben') {
               c.edit({
-                parent: client.config.parentTransactions
+                parent: client.config.parentBewerben
               });
             };
-            if (i.values[0] == 'support') {
+            if (i.values[0] == 'Support') {
               c.edit({
-                parent: client.config.parentsupport
+                parent: client.config.parentSupport
               });
             };
-            if (i.values[0] == 'beschwerde') {
+            if (i.values[0] == 'Beschwerde') {
               c.edit({
-                parent: client.config.parentbeschwerde
+                parent: client.config.parentBeschwerde
               });
             };
 
-            if (i.values[0] == 'allgemeines') {
+            if (i.values[0] == 'Partnerschaft') {
               c.edit({
-                parent: client.config.parentallgemeines
+                parent: client.config.parentPartnerschaft
               });
             };
           };
@@ -139,7 +139,7 @@ module.exports = {
 
         collector.on('end', collected => {
           if (collected.size < 1) {
-            c.send(`Keine Kategorie wurde ausgewählt. das Ticket schließt automatisch...`).then(() => {
+            c.send(`Es wurde kein Grund ausgewählt, das Ticket schließt automatisch...`).then(() => {
               setTimeout(() => {
                 if (c.deletable) {
                   c.delete();
@@ -203,10 +203,10 @@ module.exports = {
             })
             .then(async () => {
               const embed = new client.discord.MessageEmbed()
-                .setColor('6d6ee8')
-                .setAuthor('Ticket', 'https://cdn.discordapp.com/attachments/826231574177644585/934365593140879380/unknown.png')
+                .setColor('ff9600')
+                .setAuthor('Ticket', ' ')
                 .setDescription('```Ticket Speicherung```')
-                .setFooter('Nordseite', 'https://cdn.discordapp.com/attachments/826231574177644585/934365593140879380/unknown.png')
+                .setFooter('Ticket System', ' ')
                 .setTimestamp();
 
               const row = new client.discord.MessageActionRow()
@@ -250,27 +250,27 @@ module.exports = {
       const chan = guild.channels.cache.get(interaction.channelId);
 
       interaction.reply({
-        content: 'Nachrichten speichern...☁'
+        content: 'Das Ticket wird gesichert...'
       });
 
       chan.messages.fetch().then(async (messages) => {
         let a = messages.filter(m => m.author.bot !== true).map(m =>
-          `${new Date(m.createdTimestamp).toLocaleString('fr-FR')} - ${m.author.username}#${m.author.discriminator}: ${m.attachments.size > 0 ? m.attachments.first().proxyURL : m.content}`
+          `${new Date(m.createdTimestamp).toLocaleString('de-DE')} - ${m.author.username}#${m.author.discriminator}: ${m.attachments.size > 0 ? m.attachments.first().proxyURL : m.content}`
         ).reverse().join('\n');
-        if (a.length < 1) a = "Nothing"
+        if (a.length < 1) a = "Es wurde nicht im Ticket geschrieben"
         hastebin.createPaste(a, {
             contentType: 'text/plain',
             server: 'https://hastebin.com'
           }, {})
           .then(function (urlToPaste) {
             const embed = new client.discord.MessageEmbed()
-              .setAuthor('Logs Ticket', 'https://cdn.discordapp.com/attachments/826231574177644585/934365593140879380/unknown.png')
+              .setAuthor('Logs Ticket', ' ')
               .setDescription(`📰 Ticket-Logs \`${chan.id}\` erstellt von <@!${chan.topic}> und gelöscht durch <@!${interaction.user.id}>\n\nLogs: [**Klick hier, um die Logs zu sehen**](${urlToPaste})`)
               .setColor('2f3136')
               .setTimestamp();
 
             const embed2 = new client.discord.MessageEmbed()
-              .setAuthor('Logs Ticket', 'https://cdn.discordapp.com/attachments/826231574177644585/934365593140879380/unknown.png')
+              .setAuthor('Logs Ticket', ' ')
               .setDescription(`📰 Logs von deinem Ticket \`${chan.id}\`: [**Klick hier, um die Logs zu sehen**](${urlToPaste})`)
               .setColor('2f3136')
               .setTimestamp();
@@ -280,7 +280,7 @@ module.exports = {
             });
             client.users.cache.get(chan.topic).send({
               embeds: [embed2]
-            }).catch(() => {console.log('I can\'t dm him :(')});
+            }).catch(() => {console.log('Ich kann ihn keine DM Senden')});
             chan.send('Channel löschen...');
 
             setTimeout(() => {
@@ -291,3 +291,4 @@ module.exports = {
     };
   },
 };
+
