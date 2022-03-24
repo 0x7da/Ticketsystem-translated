@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ExothDE/Nordseite-GMBH.git"
+    "url": "git+https://github.com/0x7da/Ticketsysem-translated.git"
   },
-  "author": "Sayrix (github.com/ExothDE)",
+  "author": "Sayrix (github.com/0x7da)",
   "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/ExothDE/Nordseite-GMBH/issues"
+    "url": "https://github.com/0x7da/Ticketsysem-translated/issues"
   },
-  "homepage": "https://github.com/ExothDE/Nordseite-GMBH#readme"
+  "homepage": "https://github.com/0x7da/Ticketsysem-translated#readme"
 }
