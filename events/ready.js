@@ -7,18 +7,17 @@ module.exports = {
 
     function sendTicketMSG() {
       const embed = new client.discord.MessageEmbed()
-        .setColor('6d6ee8')
+        .setColor('ff9600')
         .setAuthor('Ticket Erstellen', client.user.avatarURL())
-        .setDescription('Wenn du Hilfe benötigst, ein Teammitglied melden möchtest oder eine allgemeine Frage hast,\n kannst du ein Ticket öffnen und das Northside Team wird dir weiter helfen!')
+      
+        .setDescription('Willkommen im Ticket Support von Nordseite\n\nEs gibt vier verschiedene Arten von Tickets. Um ein Ticket zu eröffnen, klicke\n einfach auf den richtigen Button.\n\nSupport-Ticket\nFür alles rund um den Server\n• Bewerben\n• Support\n• Allgemeines\n• Beschwerde\n\n• Beschwerden über Teammitglieder\n• Bewerben auf Nordseite\n• Support & Fragen über Nordseite\n• Allgemeine Fragen und Themen\n\nMissbrauch wird mit einem Mute / Bann bestraft.')
         .setFooter(client.config.footerText, client.user.avatarURL())
-        .setThumbnail('https://cdn.discordapp.com/attachments/924097472891080795/934554766770577509/ticket.png')
-        .setImage('https://cdn.discordapp.com/attachments/924097472891080795/934552731203563540/Ticketlogo.png')
       const row = new client.discord.MessageActionRow()
         .addComponents(
           new client.discord.MessageButton()
           .setCustomId('open-ticket')
           .setLabel('Ticket Erstellen')
-          .setEmoji('✉️')
+          .setEmoji('🎫')
           .setStyle('PRIMARY'),
         );
 
@@ -32,7 +31,7 @@ module.exports = {
 
     async function fetchMore(channel, limit) {
       if (!channel) {
-        throw new Error(`Erwarteten Kanal, erhalten ${typeof channel}.`);
+        throw new Error(`Kanal erhalten ${typeof channel}.`);
       }
       if (limit <= 100) {
         return channel.messages.fetch({
