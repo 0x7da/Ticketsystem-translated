@@ -4,8 +4,8 @@ Northside Discord
 Server: https://discord-northside.xyz
 
 Anforderungen
-- NodeJS
-- Discord v12 oder höher
+- NodeJS // https://nodejs.org/en/
+- Discord v12 oder höher // https://discord.js.org/#/
 - npm install // installiere die Packages 
 
 Starte den Bot 
