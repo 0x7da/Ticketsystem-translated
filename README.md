@@ -2,6 +2,14 @@
 Ticket System in JavaScript
 Northside Discord
 Server: https://discord-northside.xyz
-Tommy ist ein Noob xd
+
+Anforderungen
+- NodeJS
+- Discord v12 oder höher
+- npm i 
+
+Starte den Bot 
+- npm run deployd-commands.js // Zum laden der Slash Befehle
+- npm run index.js // Startet den Bot
 
 ![image](https://user-images.githubusercontent.com/38230414/150675201-fc0b8d9c-77f7-44e9-8bea-0eb36882be71.png)
