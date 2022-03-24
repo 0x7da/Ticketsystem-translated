@@ -6,7 +6,7 @@ Server: https://discord-northside.xyz
 Anforderungen
 - NodeJS
 - Discord v12 oder höher
-- npm i 
+- npm install // installiere die Packages 
 
 Starte den Bot 
 - npm run deploy-commands.js // Zum laden der Slash Befehle
