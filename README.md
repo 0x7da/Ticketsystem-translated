@@ -13,7 +13,7 @@ Starte den Bot
 - npm run index.js // Startet den Bot
 
 Bot hinzufügen zum Server. 
-- gehst du auf die Application seite von discord // https://discord.com/developers/applications
+- Zuerst gehst du auf die Application seite von discord // https://discord.com/developers/applications
 - Klicke auf (OAuth2) URL GENERATOR und Klickst du auf, Bot, Use Slash Commands, Administrator 
 jetzt sollte dein Invite Link so aussehen (https://discord.com/api/oauth2/authorize?client_id=DEINEBOTID&permissions=8&scope=bot)
 
