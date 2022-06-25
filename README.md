@@ -1,7 +1,5 @@
 # Ticket System
 Ticket System in JavaScript
-Northside Discord
-Server: https://discord-northside.xyz
 
 Anforderungen
 - NodeJS // https://nodejs.org/en/
